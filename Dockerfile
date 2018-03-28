@@ -33,5 +33,6 @@ RUN ~/.cargo/bin/rustup target add x86_64-apple-darwin
 RUN echo '[target.x86_64-apple-darwin] \n\
 linker = "x86_64-apple-darwin15-cc" \n\
 ar = "x86_64-apple-darwin15-ar"' >> ~/.cargo/config
+ENV CARGO_TARGET_DIR=/tmp
 
 CMD /bin/bash
