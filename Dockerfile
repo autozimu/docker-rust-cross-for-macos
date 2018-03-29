@@ -35,4 +35,7 @@ linker = "x86_64-apple-darwin15-cc" \n\
 ar = "x86_64-apple-darwin15-ar"' >> ~/.cargo/config
 ENV CARGO_TARGET_DIR=/tmp
 
+RUN apt-get install --yes bzip2
+RUN curl -L https://github.com/aktau/github-release/releases/download/v0.7.2/linux-amd64-github-release.tar.bz2 | tar -xj && mv bin/linux/amd64/github-release /usr/bin/ && chmod a+x /usr/bin/github-release
+
 CMD /bin/bash
